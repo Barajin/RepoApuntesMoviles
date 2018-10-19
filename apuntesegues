@@ -1,0 +1,31 @@
+
+[14:57, 18/10/2018] Karennn: class ViewController: UIViewController {
+
+
+    @IBOutlet weak var txttexto: UITextField!
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let valor = txttexto.text ?? "valor default"
+        let destino = segue.destination as! ViewController2
+        destino.valor = valor
+    }
+
+}
+[14:57, 18/10/2018] Karennn: class ViewController2: UIViewController {
+
+    var valor = ""
+
+    @IBOutlet weak var etiquetatexto: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        etiquetatexto.text = valor
+
+    }
+
+}
